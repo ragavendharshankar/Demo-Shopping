@@ -9,3 +9,6 @@ Run the following command
 	"mvn clean verify"
 
 Reports are available in the taget folder
+
+
+![image](https://user-images.githubusercontent.com/105480406/168403296-7c707542-8f3d-4cd1-b3f8-967b1264601b.png)
