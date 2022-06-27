@@ -11,4 +11,4 @@ Run the following command
 Reports are available in the taget folder
 
 
-![image](https://user-images.githubusercontent.com/105480406/168403296-7c707542-8f3d-4cd1-b3f8-967b1264601b.png)
+![image](https://user-images.githubusercontent.com/105480406/176058979-c4f4aefc-857a-4c73-9e19-48e1b535d177.png)
