@@ -74,7 +74,6 @@ public class PageObjects extends PageObject {
 		Entry<String, Double> minValue = Collections.min(priceList.entrySet(), Comparator.comparing(Entry::getValue));
 		Serenity.getCurrentSession().put("minimumPriceItem", minValue.getKey());
 		Serenity.getCurrentSession().put("minimumPrice", minValue.getValue());
-		System.out.println( minValue.getKey());
 
 	}
 		
