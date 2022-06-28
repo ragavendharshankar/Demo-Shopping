@@ -22,47 +22,43 @@ public class ShoppingDemoSteps  {
 	}
 	
 	@Step
-	public void enterProducts(DataTable dataTable) throws InterruptedException {
+	public void addRandomItems(int count) {
 		
-		List<String> mapVal = dataTable.asList();
-		Serenity.getCurrentSession().put("datatable", mapVal.subList(1, mapVal.size()));
-		for(int i=1;i<mapVal.size();i++) {
-			
-			pageObjects.searchProduct(mapVal.get(i));
-		}
-	}
-	
-	@Step
-	public void viewWishList()
-	{
-		pageObjects.clickWishList();
-	}
-	
-	@Step
-	public void findSelectedItems()
-	{
-		pageObjects.validateWishList();
-	}
-	
-	@Step
-	public void searchLowestProduct() {
+		pageObjects.addItems(count);
 		
-		pageObjects.searchLowestPrice();
-
 	}
 	
 	@Step
-	public void addLowestPriceItemtoCart() {
+	
+	public void viewCart() {
+		pageObjects.clickCart();
 		
-		pageObjects.addtoCart();
-
 	}
 	
 	@Step
-	public void verifyIteminCart() {
+	public void findElementsinCart(int count) {
 		
-		pageObjects.verifyinCart();
-
+		pageObjects.verifyCount(count);
+		
+	}
+	
+	@Step
+	
+	public void searchLowestPrice() {
+		
+		pageObjects.viewWishList();
+	}
+	
+	@Step
+	public void removeLowestPriceItem() {
+		
+		pageObjects.removeItem();
+	}
+	
+	@Step
+	public void verifyRemaining() {
+		
+		pageObjects.verifyRemainingCart();
 	}
 	
 	

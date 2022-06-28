@@ -17,44 +17,46 @@ public class Steps_Definition{
 	ShoppingDemoSteps shoppingDemoSteps;
 	
 	
-	@When("user login to the shopping page")
-	public void user_login_to_the_shopping_page() throws InterruptedException {
+	@When("user navigate to the shopping page")
+	public void user_navigate_to_the_shopping_page() throws InterruptedException {
 		
 		shoppingDemoSteps.login();
 	}
 	
-	@Given("I add four different products to my wish list")
-	public void I_add_four_different_products_to_my_wish_list(DataTable dataTable) throws InterruptedException {
-		shoppingDemoSteps.enterProducts(dataTable);
+	@When("I add {int} random items to my cart")
+	public void add_random_items_to_my_cart(int count )  {
 		
+		shoppingDemoSteps.addRandomItems(count);
 	}
 	
-	@When("I view my wish list table")
-	public void I_view_my_wish_list_table() {
-		shoppingDemoSteps.viewWishList();
-	}
-	
-	@Then("I found total four selected items in my wish list")
-	public void I_found_total_four_selected_items_in_my_wish_list() {
-		shoppingDemoSteps.findSelectedItems();
-	}
-	
-	@When("I search for lowest price product")
-	public void I_search_for_lowest_price_product() {
+	@When("I view my cart")
+	public void viewMyCart() throws InterruptedException {
 		
-		shoppingDemoSteps.searchLowestProduct();
+		shoppingDemoSteps.viewCart();
 	}
 	
-	@And("I am able to add the lowest price item to my cart")
-	public void I_am_able_to_add_the_lowest_price_item_to_my_cart() {
+	@Then("I find total {int} items listed in my cart")
+	public void find_total_items_listed_in_my_cart(int count ) {
 		
-		shoppingDemoSteps.addLowestPriceItemtoCart();
+		shoppingDemoSteps.findElementsinCart(count);
 	}
 	
-	@Then("I am able to verify the item in my cart")
-	public void I_am_able_to_verify_the_item_in_my_cart() {
+	@When("I search for lowest price item")
+	public void search_for_lowest_price_item() {
 		
-		shoppingDemoSteps.verifyIteminCart();
+		shoppingDemoSteps.searchLowestPrice();
+	}
+	
+	@And("I remove the lowest price item")
+	public void remove_lowest_price_item() {
+		
+		shoppingDemoSteps.removeLowestPriceItem();
+	}
+	
+	@Then("I able to verify remaining items")
+	public void able_to_verify_remaining_items() {
+		
+		shoppingDemoSteps.verifyRemaining();
 	}
 	
 	
